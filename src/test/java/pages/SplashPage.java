@@ -13,4 +13,8 @@ public class SplashPage extends Screen{
     public boolean validateVersionCorrect(){
         return isTextEqual(versionText, "Version 1.0.0");
     }
+    public AuthentificationPage goToAuthPage(){
+        pause(20000);
+        return new AuthentificationPage(driver);
+    }
 }
