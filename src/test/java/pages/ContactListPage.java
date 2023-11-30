@@ -11,10 +11,16 @@ public class ContactListPage extends Screen {
 
     @FindBy(xpath = "//*[@text='Contact list']")
     MobileElement textTitle;
+    @FindBy(xpath = "//*[@resource-id='com.sheygam.contactapp:id/emptyTxt']")
+    MobileElement textNoContacts;
 
 
     public boolean validateContactListOpened() {
         return isTextEqual(textTitle, "Contact list");
+
+    }
+    public boolean validateContactListEmpty() {
+        return isTextEqual(textNoContacts, "No Contacts. Add One more!");
 
     }
 }

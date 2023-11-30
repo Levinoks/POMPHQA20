@@ -15,7 +15,7 @@ public class AuthentificationPage extends Screen {
     @FindBy(xpath = "//*[@resource-id='com.sheygam.contactapp:id/inputPassword']")
     MobileElement inputPass;
     @FindBy(xpath = "//*[@resource-id='com.sheygam.contactapp:id/regBtn']")
-    MobileElement btnRag;
+    MobileElement btnReg;
     @FindBy(xpath = "//*[@resource-id='com.sheygam.contactapp:id/loginBtn']")
     MobileElement btnLogin;
 
@@ -25,7 +25,7 @@ public class AuthentificationPage extends Screen {
     MobileElement btnAlertOKError;
 
     public ContactListPage clickRegBtn() {
-        clickBase(btnRag);
+        clickBase(btnReg);
         return new ContactListPage(driver);
     }
 
@@ -44,6 +44,10 @@ public class AuthentificationPage extends Screen {
         clickBase(btnLogin);
         return this;
     }
+    public AuthentificationPage clickRegBtnNegative() {
+        clickBase(btnReg);
+        return this;
+    }
 
     public AuthentificationPage fillEmail(String email) {
         typeTextBase(inputEmail, email);
@@ -56,6 +60,9 @@ public class AuthentificationPage extends Screen {
     }
     public ContactListPage login(UserDTO user){
         return  fillEmail(user.getEmail()).fillPassword(user.getPassword()).clickLoginBtn();
+    }
+    public ContactListPage registration(UserDTO user){
+        return  fillEmail(user.getEmail()).fillPassword(user.getPassword()).clickRegBtn();
     }
     public boolean validateErrorTitleAlertCorrect(){
         return isTextEqual(titleErrorTextAlert, "Error");

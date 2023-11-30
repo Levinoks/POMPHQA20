@@ -35,7 +35,7 @@ public class Screen {
     }
     public void pause(long mill){
         try {
-            Thread.sleep(mill);
+            Thread.sleep(mill*1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
