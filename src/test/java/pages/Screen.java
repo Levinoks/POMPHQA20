@@ -16,6 +16,7 @@ public class Screen {
         el.click();
         el.clear();
         el.sendKeys(text);
+        driver.hideKeyboard();
     }
 
     public void clickBase(MobileElement el){
@@ -39,5 +40,8 @@ public class Screen {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+    public void btnBackOnEmulator(){
+        driver.navigate().back();
     }
 }

@@ -12,18 +12,12 @@ import java.net.URL;
 
 public class AppiumConfig {
     public static AppiumDriver<MobileElement> driver;
-//    {
-//        "platformName": "Android",
-//            "deviceName": "Nex6",
-//            "platformVersion": "8.0",
-//            "appPackage": "com.sheygam.contactapp",
-//            "appActivity": ".SplashActivity"
-//    }
+
     @BeforeSuite
     public void setup() {
         DesiredCapabilities capabilities=new DesiredCapabilities();
         capabilities.setCapability("platformName","Android");
-        capabilities.setCapability("deviceName","Nexus");
+        capabilities.setCapability("deviceName","Nex6");
         capabilities.setCapability(MobileCapabilityType .PLATFORM_VERSION, "8.0");
         capabilities.setCapability("appPackage","com.sheygam.contactapp");
         capabilities.setCapability("appActivity",".SplashActivity");
