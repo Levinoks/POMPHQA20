@@ -1,5 +1,6 @@
 package tests;
 
+import com.github.javafaker.Faker;
 import config.AppiumConfig;
 import dto.UserDTO;
 import org.testng.Assert;
@@ -47,6 +48,13 @@ public class RegistrationTests extends AppiumConfig {
     @Test
     public void negativeRegistration_WrongPassword(){
         flagIsPopUpErrorDisplays=true;
+
         Assert.assertTrue(new SplashPage(driver).goToAuthPage().fillEmail(email).fillPassword("User12345").clickRegBtnNegative().validateErrorTitleAlertCorrect());
     }
+
+//    @Test
+//    public void test(){
+//        Faker faker =new Faker();
+//        System.out.println(faker.internet().emailAddress());
+//    }
 }

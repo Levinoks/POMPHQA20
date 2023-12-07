@@ -17,7 +17,7 @@ public class AppiumConfig {
     public void setup() {
         DesiredCapabilities capabilities=new DesiredCapabilities();
         capabilities.setCapability("platformName","Android");
-        capabilities.setCapability("deviceName","Nex6");
+        capabilities.setCapability("deviceName","Nexus");
         capabilities.setCapability(MobileCapabilityType .PLATFORM_VERSION, "8.0");
         capabilities.setCapability("appPackage","com.sheygam.contactapp");
         capabilities.setCapability("appActivity",".SplashActivity");
